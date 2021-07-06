@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki: Edit</title>
+    <style>
+        body {
+            margin-left: 20px;
+        }
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input[type=submit] {
+            margin-top: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1rem;
+            background-color: chocolate;
+            padding: 14px 36px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        textarea {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.15rem;
+            padding: 14px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Editing {{.Title}}</h1>
+
+    <form action="/save/{{.Title}}" method="POST">
+      <div>
+        <textarea name="body" cols="80" rows="20">{{ printf "%s" .Body}}</textarea>
+      </div>
+      <div><input type="submit" value="Save" /></div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki: {{.Title}}</title>
+    <style>
+        #container {
+            max-width: 700px;
+            margin: auto;
+        }
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #body-content {
+            font-size: 1.2rem;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>{{.Title}}</h1>
+
+      <p>[<a href="/edit/{{.Title}}">edit</a> | <a href="/">back to home</a>]</p>
+
+      <div id="body-content">{{ printf "%s" .Body}}</div>
+    </div>
+  </body>
+</html>
