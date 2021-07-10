@@ -23,23 +23,40 @@
         margin: auto;
       }
       #create-form {
-          margin-top: 50px;
+        margin-top: 50px;
       }
-      input[type=text] {
-          width: 80%;
-          padding: 13px 10px;
-          box-sizing: border-box;
-          font-size: 1.2rem;
+      input[type="text"] {
+        width: 80%;
+        padding: 13px 10px;
+        box-sizing: border-box;
+        font-size: 1.2rem;
       }
-      input[type=submit] {
-          width: 18%;
-          padding: 13px 0;
-          cursor: pointer;
-          box-sizing: border-box;
-          font-size: 1.2rem;
-          background-color: chocolate;
-          color: #fff;
-          border: 1px solid chocolate;
+      input[type="submit"] {
+        width: 18%;
+        padding: 13px 0;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        background-color: chocolate;
+        color: #fff;
+        border: 1px solid chocolate;
+      }
+      .wiki-pages {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 45px;
+        width: 100%;
+      }
+      .wiki-pages div {
+        display: block;
+        width: 47%;
+        box-sizing: border-box;
+        border: 1px solid chocolate;
+        border-radius: 5px;
+        padding: 12px 16px;
+        margin: 10px 17px 10px 0;
+        font-size: 1.15rem;
+        font-weight: 600;
       }
     </style>
   </head>
@@ -52,6 +69,11 @@
           <input type="submit" value="Create" />
         </div>
       </form>
+      <div class="wiki-pages">
+        {{range $element := .Wikis}}
+        <div>{{$element}}</div>
+        {{end}}
+      </div>
     </div>
   </body>
 </html>
